@@ -32,11 +32,13 @@ createCard = (obj) => {
 // productsSelector.innerHTML = productsTemplate;
 
 function printCards(arrayOfProducts, idSelector) {
+  // productsSelector,innerHTML = "";
   let productsTemplate = "";
   for (const element of arrayOfProducts) {
     productsTemplate = productsTemplate + createCard(element);
   }
   const productsSelector = document.getElementById(idSelector);
+  productsSelector.innerHTML = "";
   productsSelector.innerHTML = productsTemplate;
 }
 

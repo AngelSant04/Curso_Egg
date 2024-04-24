@@ -10,10 +10,19 @@ const options = [
 
 for (let option of options) {
   const anchor = document.createElement("a");
-  anchor.className = "nav-button";
+  //Creacion de mi etiqueta li
+  // <li></li>
+  const etiquetali = document.createElement("li")
+  // anchor.className = "nav-button";
   anchor.textContent = option.text;
+  // <a>ofertas de la semana</a>
   anchor.href = option.linkTo;
-  navSelector.appendChild(anchor);
+  // <a href="/outlet.html">ofertas de la semana</a>
+
+  //<li><a href="/outlet.html">ofertas de la semana</a></li>
+  etiquetali.appendChild(anchor)
+
+  navSelector.appendChild(etiquetali);
 }
 
 const footerSelector = document.querySelector("#footer");
@@ -77,7 +86,6 @@ const optionsFooter = [
 // }
 
 let template = "";
-
 
 for (let option of optionsFooter) {
     const subItems = option.opts.map(e => `<li><a href="#">${e}</a></li>`).join('');

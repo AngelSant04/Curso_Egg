@@ -14,7 +14,7 @@ createCard = (obj) => {
             <span class="product-title">${obj.title}</span>
             <span class="product-description">${obj.description}</span>
             <div class="product-price-block">
-                <span class="price">${obj.price}</span>
+                <span class="price">$${obj.price}</span>
                 <span class="discount">50% Off</span>
             </div>
             <div class="product-tax-policy">Incluye impuesto País ...</div>

@@ -10,6 +10,7 @@ const options = [
 
 for (let option of options) {
   const anchor = document.createElement("a");
+  // <a></a>
   //Creacion de mi etiqueta li
   // <li></li>
   const etiquetali = document.createElement("li")
@@ -88,7 +89,7 @@ const optionsFooter = [
 let template = "";
 
 for (let option of optionsFooter) {
-    const subItems = option.opts.map(e => `<li><a href="#">${e}</a></li>`).join('');
+    // const subItems = option.opts.map(e => `<li><a href="#">${e}</a></li>`).join('');
     option = `
     <div class="col">
         <ul>
@@ -96,7 +97,7 @@ for (let option of optionsFooter) {
                 <a href="${option.linkTo}">${option.text}</a>
             </li> 
             ${
-                subItems
+              option.opts.map(e => `<li><a href="#">${e}</a></li>`).join('')
             }
         </ul>
     </div>

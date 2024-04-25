@@ -1,24 +1,25 @@
 const productsSelector = document.getElementById("products");
 
+{/* <a class="product-card" href="./details.html?id=${product.id}"></a> */}
 createCard = (obj) => {
   let productsTemplate = `
     <article class="product-card">
-        <a href="./details.html">
-            <img
-            class="product-img"
-            src="assets/mock2.jpg"
-            alt="Macbook Pro"
-            />
-            <div class="product-info">
-                <span class="product-title">${obj.title}</span>
-                <span class="product-description">${obj.description}</span>
-                <div class="product-price-block">
-                    <span class="price">${obj.price}</span>
-                    <span class="discount">50% Off</span>
-                </div>
-                <div class="product-tax-policy">Incluye impuesto País ...</div>
+      <a class="product-card" href="./details.html?id=${obj.id}">
+        <img
+          class="product-img"
+          src="assets/mock2.jpg"
+          alt="Macbook Pro"
+        />
+        <div class="product-info">
+            <span class="product-title">${obj.title}</span>
+            <span class="product-description">${obj.description}</span>
+            <div class="product-price-block">
+                <span class="price">${obj.price}</span>
+                <span class="discount">50% Off</span>
             </div>
-        </a>
+            <div class="product-tax-policy">Incluye impuesto País ...</div>
+        </div>
+      </a>
     </article>
 `;
   return productsTemplate;

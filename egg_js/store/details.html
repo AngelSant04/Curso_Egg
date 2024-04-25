@@ -35,19 +35,18 @@
         </div>
       </div>
       <div class="nav">
-        <ul>
-          <li><a href="#">Ofertas de la semana</a></li>
+        <ul id="nav">
+          <!-- <li><a href="#">Ofertas de la semana</a></li>
           <li><a href="#">Productos</a></li>
           <li><a href="#">Contacto</a></li>
-          <li><a href="#">Marcas</a></li>
-          <!-- Más elementos de lista aquí -->
+          <li><a href="#">Marcas</a></li> -->
         </ul>
       </div>
     </header>
     <main>
       <div class="container">
-        <div class="columns-container">
-          <div class="product-images-block">
+        <div class="columns-container" id="contenedordetail">
+          <!-- <div class="product-images-block">
             <div class="thumbnail-container">
               <img src="../assets/mock1.jpg" alt="Descripción de la imagen 1" />
             </div>
@@ -62,7 +61,6 @@
             <h1 class="title">MacBook Pro 13'4</h1>
             <form class="selector">
               <fieldset>
-                <!-- <legend>Opciones</legend> -->
                 <label class="label" for="color">Color</label>
                 <select type="text" placeholder="Selecciona un color">
                   <option value="negro espacial">Negro Espacial</option>
@@ -117,7 +115,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="sales-block">
           <h2>Productos Destacados</h2>
@@ -180,8 +178,8 @@
     </main>
     <footer>
       <div class="container">
-        <div class="columns-container">
-          <div class="col">
+        <div class="columns-container" id="footer">
+          <!-- <div class="col">
             <ul>
               <li class="col-main-item">
                 <a href="#">Ofertas de la semana</a>
@@ -217,10 +215,14 @@
             <ul>
               <li class="col-main-item"><a href="#">Garantía de Entrega</a></li>
             </ul>
-          </div>
+          </div> -->
         </div>
         <div class="copyright">Curso de HTML + CSS 2024</div>
       </div>
     </footer>
   </body>
+
+  <script src="./scripts/layout.js"></script>
+  <script src="./scripts/products.js"></script>
+  <script src="./scripts/productDetail.js"></script>
 </html>

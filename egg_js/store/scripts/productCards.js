@@ -39,7 +39,7 @@ function printCards(arrayOfProducts, idSelector) {
     productsTemplate = productsTemplate + createCard(element);
   }
   const productsSelector = document.getElementById(idSelector);
-  productsSelector.innerHTML = "";
+  // productsSelector.innerHTML = "";
   productsSelector.innerHTML = productsTemplate;
 }
 

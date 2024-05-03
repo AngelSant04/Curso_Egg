@@ -9,20 +9,21 @@
 // params.delete("idextra")
 // console.log(params.get('idextra'));
 // console.log("Existe id: ", params.has('id'));
-
+let subtotal = 1000;
 printDetails = (id) => {
-  const product = products.find((e) => e.id == id)
-  console.log(product);
+  const product = products.find((e) => e.id == id);
+  // console.log(product);
+  
   const codDetail = `
     <div class="product-images-block">
         <div class="thumbnail-container">
-          <img src="../assets/mock1.jpg" alt="Descripción de la imagen 1" />
+          <img src="../assets/mock1.jpg" alt="Descripción de la imagen 1"/>
         </div>
         <div class="thumbnail-container">
-          <img src="../assets/mock2.jpg" alt="Descripción de la imagen 2" />
+          <img src="../assets/mock2.jpg" alt="Descripción de la imagen 2"/>
         </div>
         <div class="mainimage">
-          <img src="../assets/mock1.jpg" alt="Descripción de la imagen 1" />
+          <img id="bigImg" src="../assets/mock1.jpg" alt="Descripción de la imagen 1" onClick="changeMini(event)" />
         </div>
     </div>
     <div class="product-description-block">
@@ -30,10 +31,8 @@ printDetails = (id) => {
         <form class="selector">
           <fieldset>
             <label class="label" for="color">Color</label>
-            <select type="text" placeholder="Selecciona un color">
-            ${
-              product.colors.map((e) => `<option value="${e}">${e}</option>`)
-            }
+            <select id="color-${id}" type="text" placeholder="Selecciona un color">
+            ${product.colors.map((e) => `<option value="${e}">${e}</option>`)}
             </select>
           </fieldset>
         </form>
@@ -74,11 +73,11 @@ printDetails = (id) => {
         </ul>
         <div class="checkout-process">
             <div class="top">
-            <input type="number" value="1" />
-            <button class="btn-primary">Comprar</button>
+              <input type="number" value="1" id="quantity-${id}" onChange="changeSubTotal(event)"/>
+              <button class="btn-primary">Comprar</button>
             </div>
             <div class="bottom">
-            <button class="btn-outline">Añadir al Carrito</button>
+            <button class="btn-outline" id="subtotalTexto" onClick="saveProduct(event)">Añadir al Carrito: ${subtotal}</button>
             </div>
         </div>
       </div>
@@ -86,11 +85,70 @@ printDetails = (id) => {
   `;
 
   const productDetail = document.querySelector("#contenedordetail");
-  productDetail.innerHTML = ""
+  productDetail.innerHTML = "";
   productDetail.innerHTML = codDetail;
 };
 
 const params = new URLSearchParams(location.search);
 const idUrl = params.get("id");
 
+
 printDetails(idUrl);
+
+function changeMini(event) {
+  const selectedSrc = event.target.src;
+  const bigSelector = document.querySelector("#bigImg");
+  bigSelector.src = selectedSrc;
+  // console.log(bigSelector.src);
+}
+
+
+function changeSubTotal(event) {
+  // console.log(event.target.value);
+  let cantidadComprar = event.target.value;
+  const productEncontrado = products.find(e => e.id == idUrl)
+  // console.log(productEncontrado);
+  subtotal = productEncontrado.price * cantidadComprar;
+  const textSubtotal = document.querySelector("#subtotalTexto");
+  // console.log(textSubtotal);
+  textSubtotal.textContent = ""
+  textSubtotal.textContent = `Añadir al Carrito: ${subtotal}`
+
+  // console.log("Subtotal -> ", (productEncontrado.price * cantidadComprar));
+}
+
+const saveProduct = (event) => {
+  const productEncontrado = products.find(e => e.id == idUrl)
+  const product = {
+    id: idUrl,
+    title: productEncontrado.title,
+    price: productEncontrado.price,
+    image: productEncontrado.images[0],
+    color: document.querySelector("#color-" + idUrl).value,
+    quantity: document.querySelector("#quantity-" + idUrl).value,
+  };
+
+  const arrLocal = JSON.parse(localStorage.getItem("cart"))
+
+  if (arrLocal == null) {
+    const arrAux = []
+    arrAux.push(product)
+    localStorage.setItem("cart",JSON.stringify(arrAux))
+  } else {
+    if (!arrLocal.some(e => e.id == idUrl)) {
+      arrLocal.push(product)
+      localStorage.setItem("cart", JSON.stringify(arrLocal));
+    }
+  }
+  
+
+  
+
+
+  // const stringifyProduct = JSON.stringify(product);
+  // const objLocal = localStorage.getItem("cart")
+  // console.log(objLocal);
+
+
+  // localStorage.setItem("cart", stringifyProduct);
+}

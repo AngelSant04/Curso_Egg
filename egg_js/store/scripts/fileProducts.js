@@ -9,6 +9,7 @@
 // }
 captureText = (event) => {
   const value = event.target.value;
+  //h
   const productsFilter = products.filter((product) =>
     product.title.toLowerCase().includes(value.toLowerCase())
   );
@@ -22,6 +23,7 @@ let searchSelector = document.querySelector("#search");
 
 searchSelector.addEventListener("keyup", event => {
     const arrFilter = captureText(event);
+    //arr filter -> array filtrado
     // console.log(arrFilter);
     printCards(arrFilter, "products")
 })

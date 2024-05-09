@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css..." />
+    <link rel="stylesheet" href="./styles/cart.css" />
+  </head>
+  <body>
+    <header>
+      <!-- <div class="container"></div> -->
+      <div class="search">
+        <div class="logo">
+          <a href="./index.html">
+            <img
+              src="./assets/tiendamia-logo.svg"
+              width="218"
+              alt="Logo store"
+            />
+          </a>
+        </div>
+        <div class="form">
+          <form>
+            <!-- <input type="text" placeholder="Search" onkeyup="captureText()" /> -->
+            <input type="text" placeholder="Search" id="search" />
+          </form>
+        </div>
+        <div class="social">
+          <ul>
+            <li><img src="./assets/facebook.png" alt="facebook" /></li>
+            <li><img src="./assets/instagram.png" alt="instagram" /></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav">
+        <ul id="nav">
+          <!-- <li><a href="#">Ofertas de la semana</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Marcas</a></li> -->
+        </ul>
+      </div>
+    </header>
+    <section id="hero">
+      <div class="container">
+        <div class="title-container">
+          <span>mi</span>
+          <span>carrito</span>
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="container">
+        <article id="cartproducts">
+          <img src="./assets/mock2.jpg" alt="img">
+          <div class="description">
+            <h4>Laptop Prueba</h4>
+            <p>descripcion prueba</p>
+            <input type="number" value="1" />
+          </div>
+          <div class="price">
+            <p>Total</p>
+          </div>
+        </article>
+        <article id="total">
+          <h4>Resumen del pedido</h4>
+          <div class="resumen">
+            <p>Total</p>
+            <p>100000</p>
+          </div>
+          <span>Incluye impuesto PAIS y percepción AFIP.</span>
+          <button class="btn-primary">Comprar</button>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="columns-container" id="footer">
+          <!-- <div class="col">
+            <ul>
+              <li class="col-main-item">
+                <a href="#">Ofertas de la semana</a>
+              </li>
+              <li><a href="#">Laptops</a></li>
+              <li><a href="#">Audio</a></li>
+              <li><a href="#">Auticulares</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Cómo comprar</a></li>
+              <li><a href="#">Formas de pago</a></li>
+              <li><a href="#">Envios</a></li>
+              <li><a href="#">Devoluciones</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Costos y tarifas</a></li>
+              <li><a href="#">Impuestos</a></li>
+              <li><a href="#">Facturación</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Mis pedidos</a></li>
+              <li><a href="#">Pedir nuevamente</a></li>
+              <li><a href="#">Lista de deseos</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Garantía de Entrega</a></li>
+            </ul>
+          </div> -->
+        </div>
+        <div class="copyright">Curso de HTML + CSS 2024</div>
+      </div>
+    </footer>
+
+
+
+    <script src="./scripts/layout.js"></script>
+    <script src="./scripts/products.js"></script>
+    <script src="./scripts/productCards.js"></script>
+    <script src="./scripts/fileProducts.js"></script>
+
+
+  </body>
+</html>

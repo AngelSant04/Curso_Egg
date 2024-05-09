@@ -1,0 +1,260 @@
+body,
+html {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* HEADER */
+
+header {
+  background-color: #ff3b3c; /* Ejemplo de color */
+  padding-top: 30px;
+  height: auto;
+}
+.search {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+}
+.search .form {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.search .form input {
+  height: 62px;
+  border-radius: 14px;
+  border: none;
+  width: 505px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.search .social ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.search .social ul li {
+  padding: 0 10px;
+}
+header .nav {
+  padding: 10px 0;
+}
+header .nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header .nav ul li a {
+  color: white;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+}
+header .nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* SECTION */
+
+section {
+  height: 340px;
+}
+section#hero {
+  border: 1px solid purple;
+  height: 340px;
+  background: url("../assets/hero_bg.png");
+  background-size: cover;
+  background-position: top center;
+}
+section#hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/*BODY*/
+
+main {
+  padding: 20px 10px;
+  height: auto;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  height: inherit;
+  min-height: inherit;
+}
+.title-container span {
+  display: block;
+  color: white;
+  font-weight: 700;
+}
+.title-container span:first-child {
+  font-size: 40px;
+}
+.title-container span:last-child {
+  font-size: 100px;
+  line-height: 80px;
+}
+main .container {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cartproducts {
+  width: 55%;
+  display: flex;
+  /* background-color: red; */
+  margin: 0 20px;
+  padding: 15px;
+  justify-content: space-around;
+  background-color: #ebebeb;
+}
+
+#total {
+  width: 20%;
+  margin: 0 20px;
+  padding: 15px;
+  background-color: #ebebeb;
+}
+
+#cartproducts img {
+  width: 30%;
+  height: 180px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resumen {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resumen p {
+  font-weight: bold;
+}
+
+#total span {
+  font-size: 10px;
+}
+
+.btn-primary {
+  width: 100%;
+  background: #ff3b3c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #7525A7;
+  /* min-height: 368px; */
+}
+footer .container {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+footer .columns-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.columns-container .col ul {
+  list-style-type: none;
+  padding: 0;
+}
+.columns-container .col ul li {
+  padding: 5px 0;
+}
+.columns-container .col ul li.col-main-item {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.columns-container .col ul li a {
+  color: white;
+  text-decoration: none;
+}
+.copyright {
+  border-top: 1px solid #ba53fb;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 30px 0;
+  box-sizing: border-box;
+}
+
+/* MEDIA QUERYS */
+
+@media (max-width: 886px) {
+
+  /* HEADER */
+
+  .search .form input{
+    width: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  /* HEADER */
+
+  .social {
+    display: none;
+  }
+  .search .form input {
+    width: 200px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  /* HEADER */
+
+  .search .form input {
+    display: none;
+  }
+  header .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* SECTION */
+
+  .title-container span:first-child {
+    font-size: 20px;
+  }
+  .title-container span:last-child {
+    font-size: 70px;
+    line-height: 80px;
+  }
+
+}
+
